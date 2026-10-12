@@ -90,7 +90,7 @@ body { background: var(--chrome-bg); }
 .tab-close:hover { background: #515258; color: #fff; }
 .new-tab-button { align-self: center; margin: 0 0 3px 4px; border-radius: 50%; color: #e8eaed; font-size: 22px; }
 .new-tab-button:hover { background: #3c4043; border-color: transparent; }
-.toolbar { height: 83px; padding: 0 13px 34px; gap: 8px; background: var(--chrome-active); border-bottom: 0; }
+.toolbar { height: 49px; padding: 0 13px; gap: 8px; background: var(--chrome-active); border-bottom: 0; }
 .nav-buttons { gap: 2px; flex: 0 0 auto; }
 .icon-button, .menu-button { width: 32px; height: 32px; border-radius: 50%; color: #e8eaed; font-size: 19px; }
 .icon-button:hover, .menu-button:hover { background: rgba(255,255,255,.12); color: #fff; }
@@ -108,7 +108,7 @@ body { background: var(--chrome-bg); }
 .profile-button { flex: 0 0 29px; width: 29px; height: 29px; border: 2px solid #8ab4f8; border-radius: 50%; background: #5f6368; color: #fff; font-size: 13px; font-weight: 700; margin-left: 3px; }
 .profile-button:hover { box-shadow: 0 0 0 4px rgba(255,255,255,.08); }
 .menu-button { flex: 0 0 32px; font-size: 23px; }
-.start-screen { top: 83px; background: radial-gradient(ellipse at 50% 32%,rgba(138,180,248,.07),transparent 40%),#202124; }
+.start-screen { top: 92px; background: radial-gradient(ellipse at 50% 32%,rgba(138,180,248,.07),transparent 40%),#202124; }
 .start-screen::before { opacity: .07; }
 .hero-logo { width: 76px; height: 76px; border-radius: 50%; font-size: 42px; box-shadow: 0 8px 35px rgba(0,0,0,.18); }
 .eyebrow { letter-spacing: 2.8px; color: #a8c7fa; }
