@@ -53,7 +53,7 @@ function resolveAddress(input) {
   return 'https://www.google.com/search?q=' + encodeURIComponent(value);
 }
 
-function createTab(initialUrl = '') {
+function createTab(initialUrl = '', shouldAttach = true) {
   if (!win) return null;
   const id = String(nextTabId++);
   const view = new WebContentsView({
@@ -88,7 +88,8 @@ function createTab(initialUrl = '') {
     tab.title = 'Страница аварийно завершилась';
     sendTabs();
   });
-  attachTabView(tab);
+  if (shouldAttach) attachTabView(tab);
+  else { activeTabId = tab.id; sendTabs(); }
   if (initialUrl) navigateTab(tab, initialUrl);
   else view.webContents.loadURL('https://www.google.com').catch(() => {});
   return tab;
@@ -148,7 +149,7 @@ function createWindow() {
     activeTabId = null;
     win = null;
   });
-  createTab();
+  createTab('', false);
 }
 
 ipcMain.handle('navigate', async (_event, input, tabId) => {
