@@ -61,6 +61,7 @@ function renderTabs(state) {
   if (active) {
     if (active.url) address.value = active.url;
     document.title = (active.title || 'Новая вкладка') + ' — VanaBROWSer';
+    updateBookmarkButton();
   }
 }
 
@@ -68,6 +69,15 @@ function selectTab(id) {
   startScreen.style.display = 'none';
   browserMenu.hidden = true;
   window.vanaBrowser.switchTab(id);
+}
+
+function updateBookmarkButton() {
+  let bookmarks = [];
+  try { bookmarks = JSON.parse(localStorage.getItem('vana-bookmarks') || '[]'); } catch { bookmarks = []; }
+  const saved = bookmarks.some((item) => item.url === address.value.trim());
+  const button = document.getElementById('bookmark');
+  button.classList.toggle('saved', saved);
+  button.textContent = saved ? '★' : '☆';
 }
 
 function saveBookmark() {
@@ -92,6 +102,7 @@ function saveBookmark() {
     showToast('Добавлено в закладки');
   }
   localStorage.setItem('vana-bookmarks', JSON.stringify(bookmarks));
+  updateBookmarkButton();
 }
 
 document.getElementById('address-form').addEventListener('submit', (event) => {
@@ -149,7 +160,7 @@ document.querySelectorAll('[data-menu-action]').forEach((button) => {
   });
 });
 window.vanaBrowser.onTabsChanged(renderTabs);
-window.vanaBrowser.onUrlChanged((url) => { address.value = url; });
+window.vanaBrowser.onUrlChanged((url) => { address.value = url; updateBookmarkButton(); });
 window.vanaBrowser.onNavigationError((message) => {
   showToast('Не удалось открыть страницу. Проверь адрес и подключение к интернету.');
   console.error(message);
