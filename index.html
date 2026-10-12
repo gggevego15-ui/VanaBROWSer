@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="tabbar" id="tabbar">
+    <div class="tabs-list" id="tabs-list" role="tablist" aria-label="Вкладки"></div>
+    <button class="new-tab-button" id="new-tab" title="Новая вкладка (Ctrl+T)" aria-label="Новая вкладка">+</button>
+  </div>
   <header class="toolbar">
     <div class="brand"><span class="brand-mark">V</span><span>Vana<span class="brand-accent">BROWSer</span></span></div>
     <div class="nav-buttons">
@@ -41,7 +45,7 @@
         <button data-url="https://github.com"><span class="quick-icon github">⌘</span><span>GitHub</span></button>
         <button data-url="https://www.wikipedia.org"><span class="quick-icon wiki">W</span><span>Wikipedia</span></button>
       </div>
-      <p class="footnote">Работает на Chromium · Первый прототип</p>
+      <p class="footnote">Настольный браузер на Chromium · Вкладки уже здесь</p>
     </div>
   </section>
   <script src="renderer.js"></script>
