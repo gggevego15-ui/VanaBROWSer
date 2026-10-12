@@ -39,6 +39,21 @@ npm run dist
 
 Electron Builder is configured to create a portable Windows x64 executable in the `dist` folder. The latest repository changes have not been run or tested on a Windows PC yet, so build and verify locally.
 
+## Build the EXE with GitHub Actions
+
+The repository includes a workflow at [Build Windows EXE](.github/workflows/build-windows.yml). It runs automatically when code is pushed to `main`, when a `v*` tag is pushed, or when started manually.
+
+To build and download the Windows executable:
+
+1. Open the repository's **Actions** tab.
+2. Select **Build Windows EXE**.
+3. Click **Run workflow** and confirm **Run workflow** (or open the run started by a push).
+4. Wait until the workflow finishes successfully.
+5. Open that run and download the **VanaBROWSer-Windows-x64** artifact.
+6. Extract the downloaded ZIP; the portable `.exe` is inside.
+
+Artifacts are kept for 14 days. This workflow builds the Windows x64 portable executable; it does not yet publish a permanent GitHub Release.
+
 ## Roadmap
 
 - Show and manage saved bookmarks
