@@ -133,6 +133,7 @@ function createWindow() {
     minHeight: 520,
     backgroundColor: '#090a10',
     title: 'VanaBROWSer',
+    icon: path.join(__dirname, 'assets', 'icon.ico'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
