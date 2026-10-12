@@ -5,7 +5,7 @@ let win;
 let tabs = [];
 let activeTabId = null;
 let nextTabId = 1;
-const CHROME_HEIGHT = 126;
+const CHROME_HEIGHT = 92;
 
 function activeTab() {
   return tabs.find((tab) => tab.id === activeTabId) || null;
