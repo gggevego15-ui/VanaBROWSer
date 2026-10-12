@@ -30,6 +30,10 @@ npm install
 npm start
 ```
 
+## Application icon
+
+The original vector icon is stored in `assets/icon.svg`. Before packaging, `npm run dist` automatically runs `scripts/create-icon.js`, which converts it into `assets/icon.ico` for Windows. Electron Builder uses that ICO for the executable and the app window. No manually generated or uploaded image file is needed.
+
 ## Build a standalone Windows EXE
 
 ```bash
