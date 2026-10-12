@@ -1,12 +1,36 @@
 {
   "name": "vanabrowser",
   "version": "0.1.0",
-  "description": "VanaBROWSer — desktop Chromium browser prototype",
+  "description": "VanaBROWSer — desktop Chromium browser",
   "main": "main.js",
+  "author": "VanaBROWSer",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder --win portable"
   },
   "devDependencies": {
-    "electron": "^38.0.0"
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.vanabrowser.desktop",
+    "productName": "VanaBROWSer",
+    "asar": true,
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js",
+      "styles.css",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    }
   }
 }
