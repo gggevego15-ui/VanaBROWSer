@@ -6,11 +6,14 @@
   "author": "VanaBROWSer",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --win portable"
+    "dist": "electron-builder --win portable",
+    "pre-dist": "node scripts/create-icon.js"
   },
   "devDependencies": {
     "electron": "^38.0.0",
-    "electron-builder": "^26.0.12"
+    "electron-builder": "^26.0.12",
+    "png-to-ico": "^2.1.8",
+    "sharp": "^0.34.3"
   },
   "build": {
     "appId": "com.vanabrowser.desktop",
@@ -22,15 +25,19 @@
       "index.html",
       "renderer.js",
       "styles.css",
-      "package.json"
+      "package.json",
+      "assets/icon.svg"
     ],
     "win": {
       "target": [
         {
           "target": "portable",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
-      ]
+      ],
+      "icon": "assets/icon.ico"
     }
   }
 }
