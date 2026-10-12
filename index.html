@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b0d12">
+  <meta name="theme-color" content="#202124">
   <title>VanaBROWSer</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,20 +13,27 @@
     <button class="new-tab-button" id="new-tab" title="Новая вкладка (Ctrl+T)" aria-label="Новая вкладка">+</button>
   </div>
   <header class="toolbar">
-    <div class="brand"><span class="brand-mark">V</span><span>Vana<span class="brand-accent">BROWSer</span></span></div>
     <div class="nav-buttons">
       <button class="icon-button" id="back" title="Назад" aria-label="Назад">←</button>
       <button class="icon-button" id="forward" title="Вперёд" aria-label="Вперёд">→</button>
       <button class="icon-button" id="reload" title="Обновить" aria-label="Обновить">↻</button>
-      <button class="icon-button" id="home" title="Домой" aria-label="Домой">⌂</button>
+      <button class="icon-button home-button" id="home" title="Домашняя страница" aria-label="Домашняя страница">⌂</button>
     </div>
     <form id="address-form" class="address-form">
-      <span class="search-icon">⌕</span>
-      <input id="address" type="text" placeholder="Введи адрес сайта или поисковый запрос…" autocomplete="off" spellcheck="false" aria-label="Адрес или поиск">
-      <button class="go-button" type="submit" title="Перейти">↵</button>
+      <span class="site-info" id="site-info" title="Информация о странице">◉</span>
+      <input id="address" type="text" placeholder="Поиск в Google или введите URL" autocomplete="off" spellcheck="false" aria-label="Адрес или поиск">
+      <button class="bookmark-button" id="bookmark" type="button" title="Добавить в закладки" aria-label="Добавить в закладки">☆</button>
     </form>
-    <button class="menu-button" id="about" title="О браузере">•••</button>
+    <button class="profile-button" id="profile" title="Профиль">V</button>
+    <button class="menu-button" id="menu-toggle" title="Настройки и другие инструменты" aria-label="Настройки и другие инструменты">⋮</button>
   </header>
+  <div class="browser-menu" id="browser-menu" hidden>
+    <button data-menu-action="new-tab">＋ <span>Новая вкладка</span><kbd>Ctrl+T</kbd></button>
+    <button data-menu-action="reload">↻ <span>Обновить страницу</span><kbd>Ctrl+R</kbd></button>
+    <button data-menu-action="bookmark">☆ <span>Добавить в закладки</span><kbd>Ctrl+D</kbd></button>
+    <div class="menu-separator"></div>
+    <button data-menu-action="about">ⓘ <span>О VanaBROWSer</span></button>
+  </div>
   <section id="start-screen" class="start-screen">
     <div class="hero">
       <div class="hero-logo">V</div>
@@ -35,19 +42,20 @@
       <p class="subtitle">Весь интернет — в одном месте.</p>
       <form id="hero-form" class="hero-search">
         <span class="search-icon">⌕</span>
-        <input id="hero-address" type="text" placeholder="Что будем искать?" autocomplete="off" spellcheck="false" aria-label="Поиск в интернете">
+        <input id="hero-address" type="text" placeholder="Поиск в Google или введите URL" autocomplete="off" spellcheck="false" aria-label="Поиск в интернете">
         <button type="submit" aria-label="Искать">→</button>
       </form>
-      <div class="quick-label">БЫСТРЫЙ ДОСТУП</div>
+      <div class="quick-label">ЧАСТО ПОСЕЩАЕМЫЕ САЙТЫ</div>
       <div class="quick-links">
         <button data-url="https://www.google.com"><span class="quick-icon google">G</span><span>Google</span></button>
         <button data-url="https://www.youtube.com"><span class="quick-icon youtube">▶</span><span>YouTube</span></button>
         <button data-url="https://github.com"><span class="quick-icon github">⌘</span><span>GitHub</span></button>
         <button data-url="https://www.wikipedia.org"><span class="quick-icon wiki">W</span><span>Wikipedia</span></button>
       </div>
-      <p class="footnote">Настольный браузер на Chromium · Вкладки уже здесь</p>
+      <p class="footnote">VanaBROWSer · Быстрый доступ к любимым сайтам</p>
     </div>
   </section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="renderer.js"></script>
 </body>
 </html>
