@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0d12">
+  <title>VanaBROWSer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="toolbar">
+    <div class="brand"><span class="brand-mark">V</span><span>Vana<span class="brand-accent">BROWSer</span></span></div>
+    <div class="nav-buttons">
+      <button class="icon-button" id="back" title="Назад" aria-label="Назад">←</button>
+      <button class="icon-button" id="forward" title="Вперёд" aria-label="Вперёд">→</button>
+      <button class="icon-button" id="reload" title="Обновить" aria-label="Обновить">↻</button>
+      <button class="icon-button" id="home" title="Домой" aria-label="Домой">⌂</button>
+    </div>
+    <form id="address-form" class="address-form">
+      <span class="search-icon">⌕</span>
+      <input id="address" type="text" placeholder="Введи адрес сайта или поисковый запрос…" autocomplete="off" spellcheck="false" aria-label="Адрес или поиск">
+      <button class="go-button" type="submit" title="Перейти">↵</button>
+    </form>
+    <button class="menu-button" id="about" title="О браузере">•••</button>
+  </header>
+  <section id="start-screen" class="start-screen">
+    <div class="hero">
+      <div class="hero-logo">V</div>
+      <p class="eyebrow">YOUR WEB. YOUR RULES.</p>
+      <h1>Добро пожаловать в <span>VanaBROWSer</span></h1>
+      <p class="subtitle">Весь интернет — в одном месте.</p>
+      <form id="hero-form" class="hero-search">
+        <span class="search-icon">⌕</span>
+        <input id="hero-address" type="text" placeholder="Что будем искать?" autocomplete="off" spellcheck="false" aria-label="Поиск в интернете">
+        <button type="submit" aria-label="Искать">→</button>
+      </form>
+      <div class="quick-label">БЫСТРЫЙ ДОСТУП</div>
+      <div class="quick-links">
+        <button data-url="https://www.google.com"><span class="quick-icon google">G</span><span>Google</span></button>
+        <button data-url="https://www.youtube.com"><span class="quick-icon youtube">▶</span><span>YouTube</span></button>
+        <button data-url="https://github.com"><span class="quick-icon github">⌘</span><span>GitHub</span></button>
+        <button data-url="https://www.wikipedia.org"><span class="quick-icon wiki">W</span><span>Wikipedia</span></button>
+      </div>
+      <p class="footnote">Работает на Chromium · Первый прототип</p>
+    </div>
+  </section>
+  <script src="renderer.js"></script>
+</body>
+</html>
