@@ -26,7 +26,8 @@
       "renderer.js",
       "styles.css",
       "package.json",
-      "assets/icon.svg"
+      "assets/icon.svg",
+      "assets/icon.ico"
     ],
     "win": {
       "target": [
